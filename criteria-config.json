@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "updatedAt": "2026-07-01T00:00:00.000Z",
+  "criteria": [
+    {
+      "id": "F1",
+      "name": "Innovation & Creativity",
+      "maxScore": 10,
+      "description": "Originality, uniqueness, and creative thinking behind the idea."
+    },
+    {
+      "id": "F2",
+      "name": "Problem Understanding & Relevance",
+      "maxScore": 10,
+      "description": "Clarity of problem definition and alignment to the ideathon theme."
+    },
+    {
+      "id": "F3",
+      "name": "Feasibility & Practicality",
+      "maxScore": 10,
+      "description": "Realistic implementation plan within available resources and timeframe."
+    },
+    {
+      "id": "F4",
+      "name": "Impact & Usefulness",
+      "maxScore": 10,
+      "description": "Social, environmental, or economic impact potential of the solution."
+    },
+    {
+      "id": "F5",
+      "name": "User-Centric Approach",
+      "maxScore": 10,
+      "description": "Focus on user needs, accessibility, and inclusivity of the solution."
+    },
+    {
+      "id": "F6",
+      "name": "Scalability & Future Scope",
+      "maxScore": 10,
+      "description": "Ability to expand, sustain, and evolve the solution over time."
+    },
+    {
+      "id": "F7",
+      "name": "Sustainability & Ethics",
+      "maxScore": 10,
+      "description": "Eco-friendly practices and ethical considerations in the solution design."
+    },
+    {
+      "id": "F8",
+      "name": "Presentation & Communication",
+      "maxScore": 10,
+      "description": "Pitch clarity, structure, visual design, and confidence of delivery."
+    },
+    {
+      "id": "F9",
+      "name": "Teamwork & Collaboration",
+      "maxScore": 10,
+      "description": "Coordination, participation, and team dynamics demonstrated."
+    },
+    {
+      "id": "F10",
+      "name": "Business Viability",
+      "maxScore": 10,
+      "description": "Market potential, affordability, and real-world applicability of the idea."
+    }
+  ]
+}

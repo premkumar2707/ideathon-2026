@@ -1,0 +1,364 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition.
+ *
+ * The @theme inline block maps CSS custom properties to Tailwind utility
+ * classes (e.g. --color-primary -> bg-primary, text-primary).
+ *
+ * The :root and .dark blocks define the actual color values using oklch.
+ * All colors MUST use oklch format.
+ *
+ * To add a new semantic color:
+ * 1. Add the variable to :root (light value) and .dark (dark value)
+ * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.129 0.042 264.695);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.129 0.042 264.695);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.129 0.042 264.695);
+  --primary: oklch(0.208 0.042 265.755);
+  --primary-foreground: oklch(0.984 0.003 247.858);
+  --secondary: oklch(0.968 0.007 247.896);
+  --secondary-foreground: oklch(0.208 0.042 265.755);
+  --muted: oklch(0.968 0.007 247.896);
+  --muted-foreground: oklch(0.554 0.046 257.417);
+  --accent: oklch(0.968 0.007 247.896);
+  --accent-foreground: oklch(0.208 0.042 265.755);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(0.929 0.013 255.508);
+  --input: oklch(0.929 0.013 255.508);
+  --ring: oklch(0.704 0.04 256.788);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.984 0.003 247.858);
+  --sidebar-foreground: oklch(0.129 0.042 264.695);
+  --sidebar-primary: oklch(0.208 0.042 265.755);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.968 0.007 247.896);
+  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
+  --sidebar-border: oklch(0.929 0.013 255.508);
+  --sidebar-ring: oklch(0.704 0.04 256.788);
+}
+
+.dark {
+  --background: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.984 0.003 247.858);
+  --card: oklch(0.208 0.042 265.755);
+  --card-foreground: oklch(0.984 0.003 247.858);
+  --popover: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.984 0.003 247.858);
+  --primary: oklch(0.929 0.013 255.508);
+  --primary-foreground: oklch(0.208 0.042 265.755);
+  --secondary: oklch(0.279 0.041 260.031);
+  --secondary-foreground: oklch(0.984 0.003 247.858);
+  --muted: oklch(0.279 0.041 260.031);
+  --muted-foreground: oklch(0.704 0.04 256.788);
+  --accent: oklch(0.279 0.041 260.031);
+  --accent-foreground: oklch(0.984 0.003 247.858);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.551 0.027 264.364);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.208 0.042 265.755);
+  --sidebar-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.279 0.041 260.031);
+  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.551 0.027 264.364);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: "DM Sans Variable", "DM Sans", "Inter", system-ui, -apple-system, sans-serif;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  .font-serif, [class*="font-serif"] {
+    font-family: "Space Grotesk", "DM Sans Variable", system-ui, sans-serif;
+    font-feature-settings: "ss02", "ss03";
+    letter-spacing: -0.035em;
+    font-weight: 600;
+  }
+}
+
+/* === Vapor Chrome utilities === */
+@utility chrome-text {
+  background-image: linear-gradient(
+    100deg,
+    #a5f3fc 0%,
+    #67e8f9 18%,
+    #c4b5fd 42%,
+    #f5d0fe 62%,
+    #a78bfa 82%,
+    #67e8f9 100%
+  );
+  background-size: 220% 220%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: chrome-shift 11s ease-in-out infinite;
+}
+
+@utility chrome-border {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, #a5f3fc, #c4b5fd 45%, #f5d0fe 80%, #67e8f9);
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}
+
+@utility chrome-glass {
+  background: linear-gradient(
+    140deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.02) 45%,
+    rgba(255, 255, 255, 0.05)
+  );
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+@utility chrome-bar {
+  background: linear-gradient(90deg, #67e8f9, #a5f3fc 30%, #c4b5fd 60%, #f5d0fe 90%);
+  box-shadow: 0 0 18px rgba(196, 181, 253, 0.55);
+}
+
+@keyframes chrome-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@utility float-soft {
+  animation: float-y 6s ease-in-out infinite;
+}
+
+/* ─── Light mode overrides ─── */
+.light-mode {
+  /* Page backgrounds */
+  --page-bg: #e2e8f0;
+  --page-text: #0f172a;
+
+  /* Redefine Tailwind's slate color variables to ensure correct contrast for all slate utility classes (including opacities) */
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #0f172a;
+  --color-slate-200: #1e293b;
+  --color-slate-300: #334155;
+  --color-slate-400: #475569;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+}
+
+.light-mode [class*="bg-\[#08070f\]"],
+.light-mode [class*="bg-\[#0a0a14\]"] {
+  background-color: #e2e8f0 !important;
+}
+
+/* Swap slate text to deep slate in light mode (fallback helper) */
+.light-mode .text-slate-100,
+.light-mode .text-slate-200 { color: #0f172a !important; }
+.light-mode .text-slate-300 { color: #1e293b !important; }
+.light-mode .text-slate-400 { color: #334155 !important; }
+.light-mode .text-slate-500 { color: #475569 !important; }
+
+/* Glass cards — softer in light mode */
+.light-mode .chrome-glass {
+  background: rgba(255, 255, 255, 0.6) !important;
+  backdrop-filter: blur(24px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+  border-color: rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+}
+
+/* Form container in light mode */
+.light-mode form {
+  background-color: rgba(255, 255, 255, 0.65) !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+  color: #0f172a !important;
+}
+
+/* Form labels in light mode */
+.light-mode form label {
+  color: #334155 !important;
+}
+
+/* Input fields */
+.light-mode input[class*="bg-black"],
+.light-mode input {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  color: #0f172a !important;
+  border-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+.light-mode input::placeholder {
+  color: #64748b !important;
+}
+
+/* Amber color overrides for readability in light mode */
+.light-mode .text-amber-300 { color: #b45309 !important; } /* dark amber-700 */
+.light-mode .text-amber-400 { color: #92400e !important; } /* dark amber-800 */
+.light-mode .text-amber-200 { color: #d97706 !important; } /* dark amber-600 */
+.light-mode .text-amber-300\/80 { color: rgba(180, 83, 9, 0.8) !important; }
+.light-mode .text-amber-300\/70 { color: rgba(180, 83, 9, 0.7) !important; }
+.light-mode .border-amber-300\/30 { border-color: rgba(180, 83, 9, 0.3) !important; }
+.light-mode .border-amber-300\/70 { border-color: rgba(180, 83, 9, 0.7) !important; }
+.light-mode .bg-amber-300\/15,
+.light-mode .bg-amber-300\/10 { background-color: rgba(180, 83, 9, 0.12) !important; }
+.light-mode .bg-amber-300 { background-color: #d97706 !important; color: #ffffff !important; }
+.light-mode .bg-amber-300:hover { background-color: #b45309 !important; }
+.light-mode .bg-amber-300.text-black { color: #ffffff !important; }
+
+/* Ambient gradient blobs — softer tones */
+.light-mode .ambient-blob { opacity: 0.05 !important; }
+
+/* === Custom Transitions & Micro-Animations === */
+@keyframes draw-checkmark {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.4);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(251, 191, 36, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(251, 191, 36, 0);
+  }
+}
+
+.animate-draw-checkmark {
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  animation: draw-checkmark 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2s infinite;
+}
+
+/* Base button animations */
+button, .btn-animate {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+button:hover:not(:disabled), .btn-animate:hover:not(:disabled) {
+  transform: translateY(-1px) scale(1.02);
+}
+
+button:active:not(:disabled), .btn-animate:active:not(:disabled) {
+  transform: translateY(1px) scale(0.98);
+}
+
+
